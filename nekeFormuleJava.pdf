@@ -1,0 +1,60 @@
+//datepicker and table column
+@FXML
+private TableColumn<Student, String> datumRodjenjaTableColumn;
+
+datumRodjenjaTableColumn.setCellValueFactory(
+new Callback<TableColumn.CellDataFeatures<Student, String>,
+	ObservableValue<String>>() {
+		@Override
+		public ObservableValue<String> call(
+		TableColumn.CellDataFeatures<Student, String> student) {
+			SimpleStringProperty property = new
+					SimpleStringProperty();
+			DateTimeFormatter formatter =
+				DateTimeFormatter.ofPattern("dd.MM.yyyy.");
+			property.setValue(	
+		student.getValue().getDatumRodjenja().format(formatter));
+			return property;
+	}
+});
+
+
+//pretvorba LocalDate u DATE koji se zapisuje u bazu podataka
+if (Optional.ofNullable(student.getDatumRodjenja()).isPresent()) {
+	sqlUpit.append(" AND DATUM_RODJENJA = '"
+		+ student.getDatumRodjenja().format(
+			DateTimeFormatter.ISO_DATE) + "'");
+}
+
+LocalDate datumRodjenja = resultSet.getTimestamp("datum_rodjenja").toInstant()
+					.atZone(ZoneId.systemDefault()).toLocalDate();
+preparedStatement.setDate(4,Date.valueOf(student.getDatumRodjenja()));
+
+//iz LOCALDATETIME u TIMESTAMP
+if (Optional.ofNullable(ispit.getDatumIVrijeme()).isPresent()) {
+	DateTimeFormatter formatter =
+		DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SS");
+	sqlUpit.append(" AND datum_i_vrijeme = '" +
+		ispit.getDatumIVrijeme().format(formatter) + "'");
+}
+LocalDateTime datumIVrijemeIspita = resultSet.getTimestamp("datum_i_vrijeme").toLocalDateTime();
+preparedStatement.setTimestamp(4, Timestamp.valueOf(ispit.getDatumIVrijeme()));
+
+
+
+//TIMELINE
+Timeline prikazSlavljenika = new Timeline(
+new KeyFrame(Duration.seconds(10), new EventHandler<ActionEvent>() {
+	@Override
+	public void handle(ActionEvent event) {
+		Platform.runLater(new DatumRodjenjaNit());
+	}
+}));
+prikazSlavljenika.setCycleCount(Timeline.INDEFINITE);
+prikazSlavljenika.play();
+
+
+
+//DATE to LOCALDATE iz baze
+LocalDate datumRodjenja = rezultati.getTimestamp("datum_rodjenja").toInstant()
+						.atZone(ZoneId.systemDefault()).toLocalDate();

@@ -1,0 +1,16 @@
+.threatIntelligence-container{
+    text-align: justify;
+    font-size: 20px;
+    line-height: 2;
+    overflow: auto;
+    max-width: 45%;
+    margin-left: 15px;
+}
+.threatIntelligence-title{
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.70);
+}
+li{
+    font-weight: bold;
+}

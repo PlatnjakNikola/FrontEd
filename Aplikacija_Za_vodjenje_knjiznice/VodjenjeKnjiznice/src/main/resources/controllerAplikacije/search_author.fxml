@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="515.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerAplikacije.SearchAutorController">
+    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="694.0" style="-fx-background-color: lightblue;">
+        <fx:include source="menuBar.fxml" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    </HBox>
+    <TableView fx:id="autorTableView" layoutY="258.0" prefHeight="257.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="nameOfAutorColumn" prefWidth="221.0" text="NAME" />
+            <TableColumn fx:id="surnameOfAutorColumn" minWidth="0.0" prefWidth="283.0" text="SURNAME" />
+            <TableColumn fx:id="dateOfBirthColumn" prefWidth="195.0" text="DATE OF BIRTH" />
+        </columns>
+        <contextMenu>
+            <ContextMenu fx:id="contextMenu">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#pressedEditedItem" text="Edit Item!" />
+                </items>
+            </ContextMenu>
+        </contextMenu>
+    </TableView>
+    <Text layoutX="163.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AUTHOR SEARCH">
+        <font>
+            <Font name="System Bold" size="45.0" />
+        </font></Text>
+    <Label layoutX="33.0" layoutY="127.0" text="NAME:" />
+    <Label layoutX="33.0" layoutY="193.0" prefHeight="17.0" prefWidth="62.0" text="SURNAME:" />
+    <Label layoutX="290.0" layoutY="193.0" prefHeight="17.0" prefWidth="37.0" text="YEAR:" />
+    <TextField fx:id="nameTextField" layoutX="33.0" layoutY="157.0" prefHeight="25.0" prefWidth="220.0" />
+    <TextField fx:id="surnameTextField" layoutX="33.0" layoutY="223.0" prefHeight="25.0" prefWidth="220.0" />
+    <Button layoutX="586.0" layoutY="223.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="25.0" prefWidth="76.0" text="SEARCH">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Button>
+  <DatePicker fx:id="dateOfBirthPicker" layoutX="290.0" layoutY="223.0" prefHeight="25.0" prefWidth="195.0" />
+
+</AnchorPane>

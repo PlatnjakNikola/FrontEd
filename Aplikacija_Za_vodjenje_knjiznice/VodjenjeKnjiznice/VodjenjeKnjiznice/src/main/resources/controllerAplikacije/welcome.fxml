@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="700.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartAplication.HelloApplication">
+
+        <fx:include source="menuBar.fxml" />
+
+
+        <GridPane alignment="TOP_CENTER" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="532.0" prefWidth="700.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="188.0" minWidth="10.0" prefWidth="155.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="171.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="171.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="171.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="168.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="163.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="131.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="167.0" minHeight="10.0" prefHeight="41.0" valignment="TOP" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="167.0" minHeight="0.0" prefHeight="40.0" valignment="TOP" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="194.0" minHeight="0.0" prefHeight="83.0" valignment="CENTER" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="229.0" minHeight="0.0" prefHeight="88.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="185.0" minHeight="10.0" prefHeight="148.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="86.0" prefWidth="485.0" text="Greetings" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <font>
+                        <Font name="Arial Bold" size="73.0" />
+                    </font>
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </Label>
+                <Circle fill="#ffc578" radius="100.0" rotate="3.2" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="0.0" strokeWidth="5.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.rowSpan="4" GridPane.valignment="BASELINE" GridPane.vgrow="NEVER">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                    <rotationAxis>
+                        <Point3D />
+                    </rotationAxis>
+                </Circle>
+                <Circle radius="15.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.rowSpan="2">
+                    <GridPane.margin>
+                        <Insets left="50.0" />
+                    </GridPane.margin>
+                </Circle>
+                <Circle radius="15.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.rowSpan="2">
+                    <GridPane.margin>
+                        <Insets right="50.0" />
+                    </GridPane.margin>
+                </Circle>
+                <CubicCurve controlX1="-75.30349731445312" controlX2="33.357635498046875" controlY1="125.99916076660156" controlY2="127.99916076660156" endX="33.357635498046875" endY="65.99916076660156" fill="#f7ff0a00" startX="-75.30349731445312" startY="65.99916076660156" stroke="BLACK" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                    <GridPane.margin>
+                        <Insets top="10.0" />
+                    </GridPane.margin>
+                </CubicCurve>
+                <Label graphicTextGap="5.0" prefHeight="30.0" text="welcome to Nikola's application" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <GridPane.margin>
+                        <Insets top="20.0" />
+                    </GridPane.margin>
+                </Label>
+            <ImageView depthTest="ENABLE" fitHeight="200.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"
+                       rotate="-42.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                       GridPane.rowSpan="2">
+                <GridPane.margin>
+                    <Insets right="50.0" top="5.0"/>
+                </GridPane.margin>
+                <Image url="@../Pictures/java-logo2.png"/>
+            </ImageView>
+
+            <ImageView depthTest="ENABLE" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"
+                       rotate="32.5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                       GridPane.rowSpan="2">
+                <GridPane.margin>
+                    <Insets left="50.0" top="5.0"/>
+                </GridPane.margin>
+                <Image url="@../Pictures/java-logo2.png"/>
+            </ImageView>
+        </GridPane>
+    <cursor>
+        <Cursor fx:constant="DEFAULT" />
+    </cursor>
+
+</VBox>
